@@ -1,0 +1,13 @@
+{
+    "type": "cssresource",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "url": "style.css"
+    },
+    "id": "ExtBox1-ext-gen16549",
+    "designerId": "9c349e72-f85f-4d4e-a421-a53b260327f5"
+}

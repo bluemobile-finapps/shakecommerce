@@ -1,0 +1,36 @@
+{
+    "type": "application",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "views": [
+            "DirectTransfer",
+            "PayerPanel"
+        ],
+        "name": "MyApp",
+        "controllers": [
+            "MainController"
+        ]
+    },
+    "id": "ExtBox1-ext-gen1706",
+    "designerId": "application",
+    "cn": [
+        {
+            "type": "loader",
+            "reference": {
+                "name": "loader",
+                "type": "object"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "designer|userClassName": "Loader13",
+                "disableCaching": false,
+                "enabled": true
+            },
+            "designerId": "4f850fb4-d23f-4f87-a0a0-a2587cf27460"
+        }
+    ]
+}

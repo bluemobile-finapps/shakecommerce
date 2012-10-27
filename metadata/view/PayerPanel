@@ -1,0 +1,256 @@
+{
+    "type": "panel",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "designer|userClassName": "PayerPanel",
+        "designer|userAlias": "payerPanelAlias",
+        "centered": true,
+        "cls": [
+            "modalPanel"
+        ],
+        "hidden": true,
+        "hideAnimation": [
+            "{",
+            "    type: 'popOut',",
+            "    duration: 250,",
+            "    easing: 'ease-in'",
+            "}"
+        ],
+        "html": null,
+        "id": "payerPanel",
+        "itemId": "payerPanel",
+        "showAnimation": [
+            "{",
+            "    type: 'popIn',",
+            "    duration: 250,",
+            "    easing: 'ease-out'",
+            "}"
+        ],
+        "styleHtmlContent": true,
+        "hideOnMaskTap": true,
+        "modal": true,
+        "scrollable": "vertical"
+    },
+    "id": "ExtBox1-ext-gen2229",
+    "designerId": "e273095b-a670-49a5-b08f-6b6a3c82b14b",
+    "cn": [
+        {
+            "type": "toolbar",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "designer|userClassName": "MyToolbar1",
+                "designer|displayName": "PayerToolbar",
+                "docked": "top",
+                "title": "Payer found"
+            },
+            "designerId": "45f1f017-60f9-4d87-9b30-3d00a674b79e"
+        },
+        {
+            "type": "template",
+            "reference": {
+                "name": "tpl",
+                "type": "object"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "designer|userClassName": "tpl",
+                "implHandler": [
+                    "<div class=\"x-container x-field-text x-field x-label-align-top x-field-labeled x-form-label-nowrap x-empty\">    \r",
+                    "<div class=\"x-input-el value\">Just one step to get money</div>\r",
+                    "</div>\r",
+                    "<div class=\"x-container x-field-text x-field x-label-align-top x-field-labeled x-form-label-nowrap x-empty\">    \r",
+                    "    <div class=\"x-form-label label\">\r",
+                    "        <span>Name</span>\r",
+                    "    </div>\r",
+                    "    <div class=\"x-input-el value\">\r",
+                    "        <span>{name} {lastname}</span>\r",
+                    "    </div>\r",
+                    "</div>\r",
+                    "<div class=\"x-container x-field-text x-field x-label-align-top x-field-labeled x-form-label-nowrap x-empty\">    \r",
+                    "    <div class=\"x-form-label label\">\r",
+                    "        <span>Concept</span>\r",
+                    "    </div>\r",
+                    "    <div class=\"x-input-el value\">\r",
+                    "        <span>Commerce's Shake and Pay</span>\r",
+                    "    </div>\r",
+                    "</div>\r",
+                    "<div class=\"x-container x-field-text x-field x-label-align-top x-field-labeled x-form-label-nowrap x-empty\">        \r",
+                    "    <div class=\"x-form-label label myLabel\">\r",
+                    "        <span>Amount</span>\r",
+                    "    </div>\r",
+                    "    <div class=\"x-input-el value\">\r",
+                    "        <span>{amount} €</span>\r",
+                    "    </div>\r",
+                    "</div>\r",
+                    "<div class=\"x-container x-field-text x-field x-label-align-top x-field-labeled x-form-label-nowrap x-empty\">    \r",
+                    "    <div class=\"x-form-label label\">\r",
+                    "        <span>Press Ok to execute {name}'s payment</span>\r",
+                    "    </div>\r",
+                    "<div>"
+                ],
+                "designer|displayName": "tpl"
+            },
+            "designerId": "75b916ed-feea-42e8-91b4-baa75637dcd0"
+        },
+        {
+            "type": "container",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "designer|userClassName": "MyContainer",
+                "designer|displayName": "PayerActions",
+                "docked": "bottom",
+                "height": "100px",
+                "defaults": [
+                    "{",
+                    "    flex: 1",
+                    "}"
+                ],
+                "layout": "hbox"
+            },
+            "designerId": "9d1e3f61-80c1-46f1-8719-0660115d539b",
+            "cn": [
+                {
+                    "type": "button",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "designer|userClassName": "MyButton4",
+                        "designer|displayName": "PayerCancelButton",
+                        "cls": "actionButton",
+                        "id": "payerCancelButton",
+                        "itemId": "payerCancelButton",
+                        "ui": "decline",
+                        "text": "No"
+                    },
+                    "designerId": "a1311ce4-01a8-405c-97ea-8e93c51e9eea",
+                    "cn": [
+                        {
+                            "type": "basiceventbinding",
+                            "reference": {
+                                "name": "listeners",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "designer|userClassName": "onPayerCancelButtonTap",
+                                "fn": "onPayerCancelButtonTap",
+                                "implHandler": [
+                                    " Ext.Viewport.setMasked({\r",
+                                    "    xtype: 'loadmask',\r",
+                                    "    message: ' Cancelling operation '\r",
+                                    "});\r",
+                                    "    \r",
+                                    "setTimeout(function(){    \r",
+                                    "    Ext.Viewport.setMasked(false);\r",
+                                    "    Ext.getCmp('payerPanel').hide();                \r",
+                                    "},1000);"
+                                ],
+                                "name": "tap"
+                            },
+                            "designerId": "6e563010-00d3-4780-85bd-b26ac7a56a5f"
+                        }
+                    ]
+                },
+                {
+                    "type": "button",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "designer|userClassName": "MyButton3",
+                        "designer|displayName": "PayerOkButton",
+                        "cls": "actionButton",
+                        "id": "payerOkButton",
+                        "itemId": "payerOkButton",
+                        "ui": "confirm",
+                        "text": "Yes"
+                    },
+                    "designerId": "b095400c-3924-4b35-97ba-f1c9d166fc15",
+                    "cn": [
+                        {
+                            "type": "basiceventbinding",
+                            "reference": {
+                                "name": "listeners",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "designer|userClassName": "onPayerOkButtonTap",
+                                "fn": "onPayerOkButtonTap",
+                                "implHandler": [
+                                    "var me = this;\r",
+                                    "Ext.Viewport.setMasked({\r",
+                                    "    xtype: 'loadmask',\r",
+                                    "    message: ' Getting Token '\r",
+                                    "});\r",
+                                    "\r",
+                                    "// simulate event\r",
+                                    "setTimeout(function(){    \r",
+                                    "    Ext.Viewport.setMasked(false);\r",
+                                    "    var me = this;\r",
+                                    "    Ext.Viewport.setMasked({\r",
+                                    "        xtype: 'loadmask',\r",
+                                    "        message: ' Making the payment '\r",
+                                    "    });\r",
+                                    "    \r",
+                                    "    setTimeout(function(){    \r",
+                                    "        Ext.Viewport.setMasked(false);\r",
+                                    "        Ext.Msg.alert('Success', 'Payment Done!');\r",
+                                    "        Ext.getCmp('payerPanel').hide();                \r",
+                                    "    },3000);\r",
+                                    "\r",
+                                    "},3000);\r",
+                                    ""
+                                ],
+                                "name": "tap"
+                            },
+                            "designerId": "6519db4e-201f-4935-9790-1981c7b223d8"
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "type": "basicfunction",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "designer|userClassName": "getView",
+                "fn": "getView",
+                "designer|params": [
+                    "viewId"
+                ],
+                "implHandler": [
+                    "\r",
+                    "var view = Ext.getCmp(viewId);\r",
+                    "if (view === undefined) {\r",
+                    "    view = Ext.widget(viewId+'Alias');\r",
+                    "}\r",
+                    "return view;\r",
+                    ""
+                ]
+            },
+            "designerId": "13928907-2d0b-437b-95fd-a865d3d7d496"
+        }
+    ]
+}

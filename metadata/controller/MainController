@@ -1,0 +1,70 @@
+{
+    "type": "controller",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "designer|userClassName": "MainController"
+    },
+    "id": "ExtBox1-ext-gen5629",
+    "designerId": "d8ec4890-87d0-4f94-aa89-cfdadabd91a0",
+    "cn": [
+        {
+            "type": "basicfunction",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "designer|userClassName": "getView",
+                "fn": "getView",
+                "designer|params": [
+                    "viewId"
+                ],
+                "implHandler": [
+                    "\r",
+                    "var view = Ext.getCmp(viewId);\r",
+                    "if (view === undefined) {\r",
+                    "    view = Ext.widget(viewId+'Alias');\r",
+                    "}\r",
+                    "return view;\r",
+                    ""
+                ]
+            },
+            "designerId": "4a4c122b-4ce8-407d-a10b-ebb7687009c5"
+        },
+        {
+            "type": "basicfunction",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "designer|userClassName": "changeView",
+                "fn": "changeView",
+                "designer|params": [
+                    "viewId"
+                ],
+                "implHandler": [
+                    "\r",
+                    " var destinationView = this.getView(viewId);\r",
+                    "if (destinationView !== undefined) {\r",
+                    "    Ext.Viewport.animateActiveItem(destinationView, {\r",
+                    "        type: 'fade'\r",
+                    "    });\r",
+                    "} else {\r",
+                    "    Ext.Logger.error(\"No existe la vista de destino\");\r",
+                    "}\r",
+                    "\r",
+                    "\r",
+                    "   "
+                ]
+            },
+            "designerId": "ca367d69-f2f0-4eb1-9650-0b13120a5a3c"
+        }
+    ]
+}

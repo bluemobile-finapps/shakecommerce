@@ -1,0 +1,302 @@
+{
+    "type": "formpanel",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "designer|userClassName": "DirectTransfer",
+        "designer|userAlias": "directTransferAlias",
+        "designer|initialView": true,
+        "id": "directTransfer",
+        "itemId": "directTransfer",
+        "padding": "10px",
+        "style": null,
+        "scrollable": [
+            "false"
+        ],
+        "url": null
+    },
+    "id": "ExtBox1-ext-gen2407",
+    "designerId": "0770dab2-e9f5-4503-a6ec-05a5a948a195",
+    "cn": [
+        {
+            "type": "toolbar",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "designer|userClassName": "MyToolbar",
+                "designer|displayName": "DirectTransferToolbar",
+                "docked": "top",
+                "title": "Shake & Pay (Commerce)"
+            },
+            "designerId": "cd34772b-c348-4950-8088-b335f8c08053"
+        },
+        {
+            "type": "hiddenfield",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "designer|userClassName": "MyHiddenField1",
+                "designer|displayName": "UserIdField",
+                "id": "userIdField",
+                "itemId": "userIdField",
+                "name": "userId"
+            },
+            "designerId": "4d59ef52-7cbe-44ad-8793-0ad7e6c90490"
+        },
+        {
+            "type": "hiddenfield",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "designer|userClassName": "MyHiddenField2",
+                "designer|displayName": "UserNameField",
+                "id": "userNameField",
+                "itemId": "userNameField",
+                "name": "name"
+            },
+            "designerId": "d3e792fa-ed61-4268-9212-b64970b83ec7"
+        },
+        {
+            "type": "hiddenfield",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "designer|userClassName": "MyHiddenField3",
+                "designer|displayName": "UserLastnameField",
+                "id": "userLastnameField",
+                "itemId": "userLastnameField",
+                "name": "lastname"
+            },
+            "designerId": "c1d29404-efa5-44d8-bf03-19b278240766"
+        },
+        {
+            "type": "hiddenfield",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "designer|userClassName": "MyHiddenField4",
+                "designer|displayName": "LatField",
+                "id": "latField",
+                "itemId": "latField",
+                "name": "lat"
+            },
+            "designerId": "9949da3c-2702-4fb9-8d45-465e0344d452"
+        },
+        {
+            "type": "hiddenfield",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "designer|userClassName": "MyHiddenField5",
+                "designer|displayName": "LonField",
+                "id": "lonField",
+                "itemId": "lonField",
+                "name": "lon"
+            },
+            "designerId": "d741a2c6-b4e9-4e54-a159-10f1803c04ab"
+        },
+        {
+            "type": "fieldset",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "designer|userClassName": "MyFieldSet",
+                "title": "Amount"
+            },
+            "designerId": "968d92ad-b3bc-41ac-b3d1-f4b4433d87ef",
+            "cn": [
+                {
+                    "type": "numberfield",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "designer|userClassName": "MyNumberField1",
+                        "designer|displayName": "AmountField",
+                        "id": "amountField",
+                        "itemId": "amountField",
+                        "style": "text-align: right;",
+                        "inputCls": "inputLarge",
+                        "label": null,
+                        "labelAlign": "right",
+                        "name": "amount",
+                        "value": [
+                            "125.95 €"
+                        ],
+                        "readOnly": true
+                    },
+                    "designerId": "3b9686d9-a8a4-4c91-b27a-72322efe1cf3",
+                    "cn": [
+                        {
+                            "type": "basiceventbinding",
+                            "reference": {
+                                "name": "listeners",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "designer|userClassName": "onAmountFieldChange",
+                                "fn": "onAmountFieldChange",
+                                "implHandler": [
+                                    "var text = 'Send money';\r",
+                                    "var ui = 'decline';\r",
+                                    "if (newValue === \"\") {\r",
+                                    "    text = 'Receive money';\r",
+                                    "    ui = 'confirm';\r",
+                                    "}\r",
+                                    "Ext.getCmp('searchTransferButton').setUi(ui);\r",
+                                    "Ext.getCmp('searchTransferButton').setText(text);\r",
+                                    ""
+                                ],
+                                "name": "change"
+                            },
+                            "designerId": "97cb0f24-b9ff-452c-a3ec-ff4ee52b916e"
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "type": "fieldset",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "designer|userClassName": "MyFieldSet5",
+                "title": "Items purchased"
+            },
+            "designerId": "4df4c3d6-9bfe-4feb-8338-459669e75e96",
+            "cn": [
+                {
+                    "type": "checkboxfield",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "designer|userClassName": "MyCheckbox",
+                        "label": "Capuccino",
+                        "labelWidth": "80%"
+                    },
+                    "designerId": "7ad63763-d730-467d-a9bb-a9b713381a9b"
+                },
+                {
+                    "type": "checkboxfield",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "designer|userClassName": "MyCheckbox",
+                        "label": "Orange Juice",
+                        "labelWidth": "80%"
+                    },
+                    "designerId": "a17140b3-c3d2-4964-bab5-beb105ab5f3e"
+                },
+                {
+                    "type": "checkboxfield",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "designer|userClassName": "MyCheckbox",
+                        "label": "Extra caffeine",
+                        "labelWidth": "80%"
+                    },
+                    "designerId": "7ce6a7f8-fc30-4f31-aec2-3a7a14e40b05"
+                }
+            ]
+        },
+        {
+            "type": "button",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "designer|userClassName": "MyButton7",
+                "designer|displayName": "SearchTransferButton",
+                "cls": "mainButton",
+                "id": "searchTransferButton",
+                "itemId": "searchTransferButton",
+                "ui": "confirm",
+                "text": "Get Paid"
+            },
+            "designerId": "56522e05-cbd2-4632-89a5-86d60a6f8fc1",
+            "cn": [
+                {
+                    "type": "basiceventbinding",
+                    "reference": {
+                        "name": "listeners",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "designer|userClassName": "onSearchTransferButtonTap",
+                        "fn": "onSearchTransferButtonTap",
+                        "implHandler": [
+                            "var me = this;\r",
+                            "Ext.Viewport.setMasked({\r",
+                            "    xtype: 'loadmask',\r",
+                            "    message: ' Contacting payer '\r",
+                            "});\r",
+                            "\r",
+                            "// simulate event\r",
+                            "setTimeout(function(){\r",
+                            "    var panel = MyApp.app.getController('MainController').getView('payerPanel');\r",
+                            "    Ext.Viewport.add(panel);\r",
+                            "\r",
+                            "    var data = {};\r",
+                            "    data.name = 'Víctor';\r",
+                            "    data.lastname = 'Jordán';\r",
+                            "    data.amount = '125.95';\r",
+                            "    panel.setData(data);\r",
+                            "\r",
+                            "    panel.show();\r",
+                            "    Ext.Viewport.setMasked(false);\r",
+                            "\r",
+                            "},3000);\r",
+                            "\r",
+                            ""
+                        ],
+                        "name": "tap"
+                    },
+                    "designerId": "89b9af62-0e9b-464f-a792-bc20c9368266"
+                }
+            ]
+        }
+    ]
+}
